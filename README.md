@@ -1,5 +1,7 @@
 This repository contains a machine learning project predicting Ames, Iowa home sale prices. The dataset spans 2006–2010 with features describing lot, structure, quality, neighborhood, house condition, etc. I use a chronological split—2006–2009 for training and 2010 for testing—to simulate a real forecasting task and avoid time leakage. Model selection relies on repeated K-fold cross-validation with grid search, randomized search, and Optuna; LightGBM is the best performer with an R² of 0.942 on the 2010 holdout.
 
+data_description.txt provides concise definitions for every field in the Ames dataset (column names, meanings, and value encodings).
+
 Data_Cleaning_Preprocessing.ipynb prepares the inputs used by all models. It handles missingness (for example, imputing LotFrontage from the training subset only to prevent leakage), converts ordinal features to ordered categories, removes perfectly collinear fields, excludes a small number of problematic observations, and applies light feature engineering. The cleaned outputs from this notebook are consumed by every modeling notebook.
 
 EDA.ipynb explores the data and complements the modeling. It examines the distribution of SalePrice (and its log transform), tests whether YrSold meaningfully affects prices using ANOVA, surfaces seasonality in sales by quarter, and runs a post-model sanity check to confirm that the three most important predictors from the winning model behave sensibly. 
