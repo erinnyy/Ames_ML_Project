@@ -7,7 +7,6 @@ __pycache__/
 *.png
 *.geojson
 *.jpg
-*.txt
 
 # C extensions
 *.so
