@@ -4,7 +4,7 @@ Data_Cleaning_Preprocessing.ipynb prepares the inputs used by all models. It han
 
 EDA.ipynb explores the data and complements the modeling. It examines the distribution of SalePrice (and its log transform), tests whether YrSold meaningfully affects prices using ANOVA, surfaces seasonality in sales by quarter, and runs a post-model sanity check to confirm that the three most important predictors from the winning model behave sensibly. 
 
-Model_Evaluation.ipynb compiles the key score across models, emphasizing the test R² and R² from cross-validation.
+Model_Evaluation.ipynb compiles the key scores across models, emphasizing the test R² and R² from cross-validation.
 
 The modeling notebooks each focus on a single algorithm and follow the same transparent workflow. Multiple_Linear_Regression.ipynb establishes a baseline OLS and also explores regularized models (Ridge, Lasso, Elastic Net). GradientBoosting.ipynb, Random_Forest.ipynb, LightGBM.ipynb, and CatBoost.ipynb train the corresponding tree-based models with tuned hyperparameters, evaluate via repeated cross-validation on 2006–2009, retrain on the full training period, and report the 2010 test result. Each notebook also uses the SHAP package to identify impactful predictors and feature interactions.
 
